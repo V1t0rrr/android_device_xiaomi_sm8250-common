@@ -52,6 +52,9 @@
     <string name="thermal_gaming">Gaming</string>
     <string name="thermal_streaming">Streaming</string>
 
+    <!-- Thermal Profiles tile -->
+    <string name="thermal_tile_title">Thermal Profiles</string>
+
     <!-- Clear Speaker -->
     <string name="clear_speaker_title">Clear speaker</string>
     <string name="clear_speaker_summary">Play a 30-second audio to clear the speaker</string>
