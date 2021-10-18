@@ -272,5 +272,8 @@ vendor.usb.use_ffs_mtp=0
 # Volume steps
 ro.config.vc_call_vol_steps=11
 
+# System
+persist.sys.binary_xml=false
+
 # WiFi
 wifi.aware.interface=wifi-aware0
