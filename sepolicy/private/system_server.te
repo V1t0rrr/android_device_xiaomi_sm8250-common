@@ -1,1 +1,4 @@
 get_prop(system_server, vendor_wfd_sys_debug_prop)
+
+# Zygote
+allow system_server app_zygote:process getpgid;
