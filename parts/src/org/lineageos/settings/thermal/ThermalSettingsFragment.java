@@ -51,7 +51,7 @@ import java.util.List;
 import java.util.Map;
 
 public class ThermalSettingsFragment extends PreferenceFragment
-        implements ApplicationsState.Callbacks {
+	implements ApplicationsState.Callbacks {
 
     private AllPackagesAdapter mAllPackagesAdapter;
     private ApplicationsState mApplicationsState;
@@ -60,9 +60,8 @@ public class ThermalSettingsFragment extends PreferenceFragment
     private Map<String, ApplicationsState.AppEntry> mEntryMap =
             new HashMap<String, ApplicationsState.AppEntry>();
 
-    private RecyclerView mAppsRecyclerView;
-
     private ThermalUtils mThermalUtils;
+    private RecyclerView mAppsRecyclerView;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -232,7 +231,7 @@ public class ThermalSettingsFragment extends PreferenceFragment
         }
     }
 
-    private class ModeAdapter extends BaseAdapter {
+     private class ModeAdapter extends BaseAdapter {
 
         private final LayoutInflater inflater;
         private final int[] items = {
@@ -295,32 +294,29 @@ public class ThermalSettingsFragment extends PreferenceFragment
         @Override
         public int getItemCount() {
             return mEntries.size();
-        }
+ 	}
 
         @Override
         public long getItemId(int position) {
             return mEntries.get(position).id;
         }
 
-        @NonNull
+	@NonNull
         @Override
         public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            ViewHolder holder = new ViewHolder(LayoutInflater.from(parent.getContext())
+            return new ViewHolder(LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.thermal_list_item, parent, false));
-            Context context = holder.itemView.getContext();
-            holder.mode.setAdapter(new ModeAdapter(context));
-            holder.mode.setOnItemSelectedListener(this);
-            return holder;
         }
 
-        @Override
+ 	@Override
         public void onBindViewHolder(ViewHolder holder, int position) {
-            ApplicationsState.AppEntry entry = mEntries.get(position);
+            Context context = holder.itemView.getContext();
 
             if (entry == null) {
                 return;
             }
-
+            holder.mode.setAdapter(new ModeAdapter(context));
+            holder.mode.setOnItemSelectedListener(this);
             holder.title.setText(entry.label);
             holder.title.setOnClickListener(v -> holder.mode.performClick());
             mApplicationsState.ensureIcon(entry);
