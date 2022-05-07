@@ -147,6 +147,18 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
     persist.vendor.data.mode=concurrent \
     ro.vendor.use_data_netmgrd=true
 
+# Display
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.display.paneltype=2 \
+    ro.vendor.display.sensortype=2 \
+    vendor.display.enable_async_powermode=0 \
+    vendor.display.qdcm.mode_combine=1 \
+    vendor.display.use_layer_ext=0 \
+    vendor.display.use_smooth_motion=0
+
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/display/,$(TARGET_COPY_OUT_VENDOR)/etc)
+
 # DPM
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.dpmhalservice.enable=1
