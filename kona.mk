@@ -193,6 +193,12 @@ PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl-qti \
     android.hardware.health@2.1-service
 
+# Init
+PRODUCT_PACKAGES += \
+    init.mi.usb.sh \
+    init.qti.dcvs.sh \
+    init.target.rc
+
 # Incremental FS
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.incremental.enable=1
