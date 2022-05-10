@@ -9,6 +9,9 @@
 
 set -e
 
+DEVICE_COMMON=sm8250-common
+VENDOR=xiaomi
+
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
@@ -26,7 +29,7 @@ source "${HELPER}"
 setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${ANDROID_ROOT}" true
 
 # Warning headers and guards
-write_headers "lmi"
+write_headers "alioth lmi"
 
 # The standard common blobs
 write_makefiles "${MY_DIR}/proprietary-files.txt" true

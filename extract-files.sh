@@ -9,6 +9,9 @@
 
 set -e
 
+DEVICE_COMMON=sm8250-common
+VENDOR=xiaomi
+
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
@@ -58,6 +61,23 @@ done
 if [ -z "${SRC}" ]; then
     SRC="adb"
 fi
+
+function blob_fixup() {
+    case "${1}" in
+        vendor/etc/libnfc-nci.conf)
+            cat << EOF >> "${2}"
+###############################################################################
+# Mifare Tag implementation
+# 0: General implementation
+# 1: Legacy implementation
+LEGACY_MIFARE_READER=1
+EOF
+            ;;
+        vendor/etc/media_codecs_kona.xml)
+            sed -i "/media_codecs_dolby_audio.xml/d" "${2}"
+            ;;
+    esac
+}
 
 if [ -z "${ONLY_TARGET}" ]; then
     # Initialize the helper for common device
