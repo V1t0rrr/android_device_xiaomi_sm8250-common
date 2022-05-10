@@ -356,3 +356,6 @@ PRODUCT_PACKAGES += \
 # WLAN
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wlan/WCNSS_qcom_cfg_qca6390.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
+
+# Inherit the proprietary files
+$(call inherit-product, vendor/xiaomi/sm8250-common/sm8250-common-vendor.mk)

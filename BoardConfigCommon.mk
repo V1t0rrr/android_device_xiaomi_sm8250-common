@@ -179,3 +179,6 @@ endif
 
 # RIL
 ENABLE_VENDOR_RIL_SERVICE := true
+
+# Inherit the proprietary files
+include vendor/xiaomi/sm8250-common/BoardConfigVendor.mk
