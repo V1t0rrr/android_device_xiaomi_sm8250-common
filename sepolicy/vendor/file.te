@@ -1,0 +1,27 @@
+# Cirrus Device
+type sysfs_f0_value, sysfs_type, fs_type;
+
+# Ultrasound
+type vendor_sysfs_iio, fs_type, sysfs_type;
+
+# Battery
+type persist_subsys_file, vendor_persist_type, file_type;
+
+# Camera
+type vendor_persist_camera_file, file_type, vendor_persist_type;
+
+# Kmsg
+type proc_last_kmsg, fs_type, proc_type;
+
+# Fingerprint 
+type vendor_fingerprint_data_file, data_file_type, file_type, vendor_persist_type;
+
+# Thermal data
+type vendor_thermal_data_file, file_type, data_file_type;
+
+# Touch
+type sysfs_touchpanel, fs_type, sysfs_type;
+
+type sysfs_tp_partial_data, fs_type, sysfs_type;
+
+type vendor_sysfs_tp_virtual_prox, fs_type, sysfs_type;

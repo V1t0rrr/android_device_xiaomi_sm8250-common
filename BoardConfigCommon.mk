@@ -180,5 +180,8 @@ endif
 # RIL
 ENABLE_VENDOR_RIL_SERVICE := true
 
+# SELinux
+BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
+
 # Inherit the proprietary files
 include vendor/xiaomi/sm8250-common/BoardConfigVendor.mk
