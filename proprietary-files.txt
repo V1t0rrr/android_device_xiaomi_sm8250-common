@@ -1,4 +1,4 @@
-# All the unpinned blobs are from extracted from LA.UM.9.12.r1-13700.03-SMxx50.QSSI12.0
+# All the unpinned blobs are from extracted from LA.UM.9.12.r1-14100.02-SMxx50.QSSI12.0
 
 # ADSPRPC
 vendor/bin/adsprpcd
