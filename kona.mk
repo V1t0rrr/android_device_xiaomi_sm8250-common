@@ -246,24 +246,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.incremental.enable=1
 
-# Media (VPP)
-PRODUCT_PROPERTY_OVERRIDES += \
-    debug.media.video.frc=false \
-    debug.media.video.style=false \
-    debug.media.video.vpp=false \
-    debug.media.vpp.enable=false \
-    ro.vendor.media.video.frc.support=true \
-    ro.vendor.media.video.style.support=false \
-    ro.vendor.media.video.vpp.support=true \
-    vendor.media.vpp.aie.cade=100 \
-    vendor.media.vpp.aie.ltm=1 \
-    vendor.media.vpp.aie.ltmacebrih=0 \
-    vendor.media.vpp.aie.ltmacebril=20 \
-    vendor.media.vpp.aie.ltmacestr=37 \
-    vendor.media.vpp.aie.ltmsatgain=55 \
-    vendor.media.vpp.aie.ltmsatoff=55 \
-    vendor.media.vpp.debug.value.use=false
-
 # Netflix
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.netflix.bsp_rev=Q8250-19134-1
